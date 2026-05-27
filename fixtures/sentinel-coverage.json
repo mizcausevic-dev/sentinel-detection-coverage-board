@@ -1,0 +1,109 @@
+{
+  "workspaces": [
+    {
+      "id": "ws-core-prod",
+      "subscriptionId": "sub-prod-001",
+      "scope": "Global SOC workspace",
+      "status": "HEALTHY",
+      "sources": ["INGESTION", "IDENTITY", "ENDPOINT", "THREAT_INTEL"],
+      "owner": "Security Platform",
+      "automationEnabled": true
+    },
+    {
+      "id": "ws-emea-collab",
+      "subscriptionId": "sub-emea-014",
+      "scope": "EMEA collaboration workspace",
+      "status": "DEGRADED",
+      "sources": ["IDENTITY", "CLOUD_APP"],
+      "owner": "Collaboration Detection Engineering",
+      "automationEnabled": false
+    }
+  ],
+  "detections": [
+    {
+      "id": "sn-001",
+      "category": "Identity",
+      "title": "Privileged access anomaly detection is missing a current owner",
+      "scope": "Global SOC workspace",
+      "severity": "high",
+      "status": "ACTIVE",
+      "ruleKind": "AnalyticsRule",
+      "asset": "Privileged access analytics",
+      "principal": "global-admins@kineticgain.com",
+      "source": "IDENTITY",
+      "createdAt": "2026-05-26T09:10:00Z",
+      "updatedAt": "2026-05-26T10:35:00Z",
+      "owner": "Identity Detection Engineering"
+    },
+    {
+      "id": "sn-002",
+      "category": "Endpoint",
+      "title": "Server telemetry connector drift on finance reporting nodes",
+      "scope": "Global SOC workspace",
+      "severity": "medium",
+      "status": "ACTIVE",
+      "ruleKind": "Connector",
+      "asset": "Defender for Endpoint connector",
+      "source": "ENDPOINT",
+      "createdAt": "2026-05-25T20:15:00Z",
+      "updatedAt": "2026-05-25T21:00:00Z",
+      "owner": "Security Platform"
+    },
+    {
+      "id": "sn-003",
+      "category": "Cloud app",
+      "title": "Collaboration app connector is not ingesting enough audit events",
+      "scope": "EMEA collaboration workspace",
+      "severity": "medium",
+      "status": "ACTIVE",
+      "ruleKind": "Connector",
+      "asset": "M365 audit connector",
+      "source": "CLOUD_APP",
+      "createdAt": "2026-05-24T22:00:00Z",
+      "updatedAt": "2026-05-24T22:40:00Z",
+      "owner": "Collaboration Detection Engineering"
+    },
+    {
+      "id": "sn-004",
+      "category": "Automation",
+      "title": "Incident playbook is incomplete for high-confidence phishing incidents",
+      "scope": "EMEA collaboration workspace",
+      "severity": "high",
+      "status": "ACTIVE",
+      "ruleKind": "Playbook",
+      "asset": "Phishing incident playbook",
+      "source": "INGESTION",
+      "createdAt": "2026-05-24T08:30:00Z",
+      "updatedAt": "2026-05-24T09:15:00Z",
+      "owner": "Incident Automation"
+    },
+    {
+      "id": "sn-005",
+      "category": "Threat intel",
+      "title": "Threat-intel correlation rule remains active without verified closure",
+      "scope": "Global SOC workspace",
+      "severity": "high",
+      "status": "ACTIVE",
+      "ruleKind": "Incident",
+      "asset": "TI correlation incident queue",
+      "source": "THREAT_INTEL",
+      "createdAt": "2026-05-23T12:00:00Z",
+      "updatedAt": "2026-05-23T12:20:00Z"
+    },
+    {
+      "id": "sn-006",
+      "category": "Identity",
+      "title": "Legacy guest anomaly replay reviewed and closed",
+      "scope": "EMEA collaboration workspace",
+      "severity": "low",
+      "status": "RESOLVED",
+      "ruleKind": "AnalyticsRule",
+      "asset": "Guest access anomaly",
+      "principal": "legacy-guest#EXT#@kineticgain.onmicrosoft.com",
+      "source": "IDENTITY",
+      "createdAt": "2026-05-20T12:00:00Z",
+      "updatedAt": "2026-05-21T08:00:00Z",
+      "owner": "Identity Detection Engineering"
+    }
+  ]
+}

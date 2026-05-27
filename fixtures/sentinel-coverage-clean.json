@@ -1,0 +1,30 @@
+{
+  "workspaces": [
+    {
+      "id": "ws-clean-core",
+      "subscriptionId": "sub-clean-001",
+      "scope": "Global SOC workspace",
+      "status": "HEALTHY",
+      "sources": ["INGESTION", "IDENTITY", "ENDPOINT", "CLOUD_APP", "THREAT_INTEL"],
+      "owner": "Security Platform",
+      "automationEnabled": true
+    }
+  ],
+  "detections": [
+    {
+      "id": "sn-clean-01",
+      "category": "Identity",
+      "title": "Expected guest replay review",
+      "scope": "Global SOC workspace",
+      "severity": "low",
+      "status": "RESOLVED",
+      "ruleKind": "AnalyticsRule",
+      "asset": "Guest anomaly review",
+      "principal": "guest-audit-bot#EXT#@kineticgain.onmicrosoft.com",
+      "source": "IDENTITY",
+      "createdAt": "2026-05-29T12:00:00Z",
+      "updatedAt": "2026-05-29T13:00:00Z",
+      "owner": "Identity Detection Engineering"
+    }
+  ]
+}
