@@ -104,6 +104,7 @@ Open:
 | License | [AGPL-3.0-or-later](./LICENSE) |
 | Deploy | Static prerender -> **https://sentinel.kineticgain.com/** |
 | Data posture | Synthetic sample data only; no live Sentinel workspace credentials, customer events, or production incidents |
+| Suite | Part of the [Kinetic Gain Protocol Suite](https://suite.kineticgain.com/) operator portfolio · apex: [kineticgain.com](https://kineticgain.com) |
 
 ## Docs
 
